@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MedicineService } from './Service/medicine.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,22 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'MedfastFrontend';
+
+  constructor(private MedicineService :MedicineService){
+
+  }
+
+  ngOnIint():void{
+    this.getAllproducts();
+    
+  }
+
+  getAllproducts(){
+    this.MedicineService.getAllproducts()
+    .subscribe(
+    response =>{
+      console.log(response);
+    }
+    )
+}
 }
