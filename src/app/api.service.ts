@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  private apiUrl = 'http://localhost:5000/api'; // Replace with your backend API URL
+  private apiUrl = 'https://localhost:7070/api'; // Replace with your backend API URL
 
   constructor(private http: HttpClient) {}
 
@@ -29,8 +29,8 @@ export class ApiService {
     return this.http.get(`${this.apiUrl}/products/${productId}`);
   }
 
-  searchProducts(searchTerm: string): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/products?search=${searchTerm}`);
+  searchProducts(name: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/medicines/search?name=${name}`);
   }
   // Add more methods for other API requests as needed, such as updating a user's profile or adding products to a shopping cart.
 }

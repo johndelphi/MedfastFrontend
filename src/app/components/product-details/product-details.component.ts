@@ -10,6 +10,7 @@ import { ApiService } from '../../api.service';
 export class ProductDetailsComponent implements OnInit {
   product: any;
   searchTerm = '';
+  medicines: any[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -39,7 +40,9 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   onSearch() {
-    // Implement your logic for searching products, e.g., navigate to the product list page with the search term
-    this.router.navigate(['/product-list'], { queryParams: { search: this.searchTerm } });
+    this.apiService.searchProducts(this.searchTerm).subscribe((medicines) => {
+      console.log(medicines);
+      this.medicines = medicines;
+    });
   }
 }

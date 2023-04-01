@@ -1,24 +1,23 @@
 <div class="search-container">
-  <input type="text" placeholder="Search products" [(ngModel)]="searchTerm" class="search-input" />
-  <button (click)="onSearch()" class="search-button">Search</button>
+    <input type="text" placeholder="Search products" [(ngModel)]="searchTerm" class="search-input" />
+    <button (click)="onSearch()" class="search-button">Search</button>
 </div>
 
 <!-- Add the rest of your product details component's HTML code here -->
 
 <div class="container">
-<div class="product-details">
-    <h2>{{ product.name }}</h2>
-    <div class="product-image">
-      <img [src]="product.imageUrl" [alt]="product.name" />
-    </div>
-    <div class="product-info">
-      <p><strong>Description:</strong> {{ product.description }}</p>
-      <p><strong>Price:</strong> {{ product.price | currency:'USD':'symbol' }}</p>
-      <p><strong>Category:</strong> {{ product.category }}</p>
-    </div>
-    <div class="product-actions">
+    <div class="product-details">
+        <h2>{{ product.name }}</h2>
+        <div class="product-image">
+            <img [src]="product.imageUrl" [alt]="product.name" />
+        </div>
+        <div class="product-info">
+            <p><strong>Description:</strong> {{ product.description }}</p>
+            <p><strong>Price:</strong> {{ product.price | currency:'USD':'symbol' }}</p>
+            <p><strong>Category:</strong> {{ product.category }}</p>
+        </div>
+        <!-- <div class="product-actions">
       <button (click)="addToCart(product)">Add to Cart</button>
+    </div> -->
     </div>
-  </div>
-  </div>
-  
+</div>
