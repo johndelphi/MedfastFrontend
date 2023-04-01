@@ -11,6 +11,8 @@ import { CommonModule } from '@angular/common';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { HeaderComponent } from './components/header/header.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+
 
 
 
@@ -22,7 +24,7 @@ import { HeaderComponent } from './components/header/header.component';
     ProductListComponent,
     ProductDetailsComponent,
     LoginComponent, // Add LoginComponent to declarations array
-    RegistrationComponent, HeaderComponent, // Add RegistrationComponent to declarations array
+    RegistrationComponent, HeaderComponent, SearchBarComponent,  // Add RegistrationComponent to declarations array
   ],
   imports: [
     BrowserModule,

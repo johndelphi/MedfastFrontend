@@ -34,10 +34,7 @@ export class ProductDetailsComponent implements OnInit {
     }
   }
 
-  addToCart(product: any) {
-    // Implement your logic for adding the product to the cart
-    console.log('Add to cart:', product);
-  }
+  
 
   onSearch() {
     this.apiService.searchProducts(this.searchTerm).subscribe((medicines) => {
