@@ -1,4 +1,19 @@
 <div class="search-container">
-    <input type="text" placeholder="Search">
-    <button type="submit">Compare Prices</button>
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Search" (keyup.enter)="search()">
+    <button type="submit" (click)="search()">Compare Prices</button>
+</div>
+
+<!-- Display search results -->
+<div *ngIf="searchResults && searchResults.length > 0">
+    <h3>Search Results:</h3>
+    <ul>
+        <li *ngFor="let medicine of searchResults">
+            {{ medicine.medicineName }} - {{ medicine.medicineDescription }} - ${{ medicine.price }}
+        </li>
+    </ul>
+</div>
+
+<!-- Display a message if there are no results -->
+<div *ngIf="searchResults && searchResults.length === 0">
+    <p>No results found.</p>
 </div>
