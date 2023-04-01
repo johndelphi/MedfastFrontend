@@ -1,0 +1,24 @@
+.table-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .table-title h1 {
+    margin-bottom: 1rem;
+  }
+  
+  .price-list-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    text-align: center; /* Align table contents to the center */
+  }
+  
+  .price-list-table th,
+  .price-list-table td {
+    padding: 1rem;
+  }
+  

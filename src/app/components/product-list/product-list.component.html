@@ -1,0 +1,27 @@
+<div class="table-container">
+  <div class="table title">
+    <h1>Product List</h1>
+  </div>
+
+
+<table class="price-list-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{ product.name }}</td>
+      <td>{{ product.description }}</td>
+      <td>{{ getFormattedPrice(product.price) }}</td>
+      <td>
+        <button (click)="viewDetails(product.id)">View Details</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
