@@ -9,23 +9,22 @@
                 <th>Name</th>
                 <th>Price</th>
                 <th>Discount</th>
-
+                <th>Discount</th>
 
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let medicine of MedicineListResult">
                 <td>{{ medicine.medicineName }}</td>
-
+                <td>${{ medicine.price }}</td>
 
                 <td>${{ medicine.price }}</td>
                 <td>
                     <button class="discount-button" *ngIf="medicine.medicineDiscount > 0">
               Save ${{ medicine.medicineDiscount }}
             </button>
-                    <button class="discount-button" *ngIf="medicine.medicineDiscount === 0">
-              Discount
-            </button>
+
+
                 </td>
             </tr>
         </tbody>

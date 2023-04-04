@@ -1,8 +1,20 @@
-<app-header></app-header>
-<br>
-<br>
-<app-search-bar (resultsEmitter)="filteredMedicines = $event"></app-search-bar>
-<div class="Homecontainer">
-    <app-product-details></app-product-details>
-    <app-product-list [MedicineListResult]="filteredMedicines"></app-product-list>
+<div class="container-fluid">
+    <app-header></app-header>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-4">
+            <app-search-bar (resultsEmitter)="filteredMedicines = $event"></app-search-bar>
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-8">
+                    <app-product-details></app-product-details>
+                </div>
+                <div class="col-md-4">
+                    <app-product-list [MedicineListResult]="filteredMedicines"></app-product-list>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
