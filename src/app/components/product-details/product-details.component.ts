@@ -10,7 +10,7 @@ import { ApiService } from '../../api.service';
 export class ProductDetailsComponent implements OnInit {
   product: any;
   searchTerm = '';
-  medicines: any[] = [];
+  Medicines: any[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -37,9 +37,9 @@ export class ProductDetailsComponent implements OnInit {
   
 
   onSearch() {
-    this.apiService.searchProducts(this.searchTerm).subscribe((medicines) => {
-      console.log(medicines);
-      this.medicines = medicines;
+    this.apiService.searchProducts(this.searchTerm).subscribe((Medicines) => {
+      console.log(Medicines);
+      this.Medicines = Medicines;
     });
   }
 }

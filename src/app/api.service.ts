@@ -1,20 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { Medicine } from './models/Medicine.model';
 
-export interface Medicine{
-  
-  medicineName: string,
-  medicineDescription: string,
-  price: number;
-  category: string;
-  imageUrl: string;
-}
+
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  private apiBaseUrl = 'https://localhost:7070/api'; 
+  private apiBaseUrl = environment.apiBaseUrl; 
 
   constructor(private http: HttpClient) {}
 
@@ -38,7 +33,7 @@ export class ApiService {
   }
 
   searchProducts(searchTerm: string) :Observable<Medicine[]> {
-      const searchUrl = `${this.apiBaseUrl}/medicines/Search?name=${searchTerm}`;
+      const searchUrl = `${this.apiBaseUrl}/api/Medicines/Search?name=${searchTerm}`;
     return this.http.get<Medicine[]>(searchUrl);
   }
   // Add more methods for other API requests as needed, such as updating a user's profile or adding products to a shopping cart.

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MedicineService } from './Service/medicine.service';
+import { Medicine } from './models/Medicine.model';
 
 @Component({
   selector: 'app-root',
@@ -8,22 +8,9 @@ import { MedicineService } from './Service/medicine.service';
 })
 export class AppComponent {
   title = 'MedfastFrontend';
+  filteredMedicines: Medicine[] = [];
 
-  constructor(private MedicineService :MedicineService){
-
+  ngOnInit(): void {
+    // Add logic to retrieve initial data here, if needed
   }
-
-  ngOnIint():void{
-    this.getAllproducts();
-    
-  }
-
-  getAllproducts(){
-    this.MedicineService.getAllproducts()
-    .subscribe(
-    response =>{
-      console.log(response);
-    }
-    )
-}
 }

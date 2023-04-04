@@ -1,8 +1,9 @@
-export interface medicine{
+export interface Medicine{
     MedicineId:string;
-    MedicineName:string;
+    medicineName : string;
     MedicineDescription:string;
-    price:DoubleRange;
+    medicineDiscount:number;
+    price:number;
     Category:String;
     ImageUrl:String;
 

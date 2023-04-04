@@ -1,8 +1,8 @@
 <app-header></app-header>
 <br>
 <br>
-<app-search-bar></app-search-bar>
+<app-search-bar (resultsEmitter)="filteredMedicines = $event"></app-search-bar>
 <div class="Homecontainer">
     <app-product-details></app-product-details>
-    <app-product-list></app-product-list>
+    <app-product-list [MedicineListResult]="filteredMedicines"></app-product-list>
 </div>

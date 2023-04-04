@@ -1,5 +1,7 @@
-import { Component, OnInit,Output,EventEmitter } from '@angular/core';
-import { ApiService,Medicine } from '../../api.service';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { ApiService } from 'src/app/api.service';
+import { Medicine } from 'src/app/models/Medicine.model';
+import { ProductListComponent } from '../product-list/product-list.component';
 
 @Component({
   selector: 'app-search-bar',
@@ -8,20 +10,19 @@ import { ApiService,Medicine } from '../../api.service';
 })
 export class SearchBarComponent implements OnInit {
   searchTerm! : string;
-  searchResults! : Medicine[];
+  filteredMedicines! : Medicine[];
   @Output() resultsEmitter = new EventEmitter<Medicine[]>();
 
-  constructor(private  apiservice:ApiService) { }
+  constructor(private apiService : ApiService) { }
 
   ngOnInit(): void {
   }
 
-
   search(): void {
-    this.apiservice.searchProducts(this.searchTerm).subscribe((medicines: Medicine[]) => {
-      this.searchResults = medicines;
-      console.log('Search Results:', this.searchResults); 
-      this.resultsEmitter.emit(this.searchResults);
+    this.apiService.searchProducts(this.searchTerm).subscribe((medicines: Medicine[]) => {
+      this.filteredMedicines = medicines;
+      // console.log('Search Results:', this.filteredMedicines); 
+      this.resultsEmitter.emit(this.filteredMedicines);
     });
   }
 }

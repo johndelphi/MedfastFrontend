@@ -1,20 +1,32 @@
-<div class="container">
+<div *ngIf="MedicineListResult.length === 0">
+    <p>No search results found.</p>
+</div>
+
+<div *ngIf="MedicineListResult.length > 0" class="container">
     <table class="prices">
         <thead>
             <tr>
-                <th>Pharmacy</th>
+                <th>Name</th>
                 <th>Price</th>
                 <th>Discount</th>
+
+
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let retailer of retailers">
-                <td>{{ retailer.name }}</td>
-                <td>{{ retailer.price }}</td>
-                <td *ngIf="retailer.discountAmount">
-                    <button class="discount-button"> {{ retailer.discountAmount }} Discount</button>
+            <tr *ngFor="let medicine of MedicineListResult">
+                <td>{{ medicine.medicineName }}</td>
+
+
+                <td>${{ medicine.price }}</td>
+                <td>
+                    <button class="discount-button" *ngIf="medicine.medicineDiscount > 0">
+              Save ${{ medicine.medicineDiscount }}
+            </button>
+                    <button class="discount-button" *ngIf="medicine.medicineDiscount === 0">
+              Discount
+            </button>
                 </td>
-                <td *ngIf="!retailer.discountAmount">-</td>
             </tr>
         </tbody>
     </table>

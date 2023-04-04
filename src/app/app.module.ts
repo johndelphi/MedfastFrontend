@@ -23,6 +23,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     AppComponent,
     ProductListComponent,
     ProductDetailsComponent,
+    SearchBarComponent,
     LoginComponent, // Add LoginComponent to declarations array
     RegistrationComponent, HeaderComponent, SearchBarComponent,  // Add RegistrationComponent to declarations array
   ],
