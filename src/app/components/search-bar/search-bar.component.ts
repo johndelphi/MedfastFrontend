@@ -21,7 +21,7 @@ export class SearchBarComponent implements OnInit {
   search(): void {
     this.apiService.searchProducts(this.searchTerm).subscribe((medicines: Medicine[]) => {
       this.filteredMedicines = medicines;
-      // console.log('Search Results:', this.filteredMedicines); 
+       console.log('Search Results:', this.filteredMedicines); 
       this.resultsEmitter.emit(this.filteredMedicines);
     });
   }
