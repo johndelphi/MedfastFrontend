@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
-import { Medicine } from 'src/app/models/Medicine.model';
+import { Medicine } from 'src/app/models/medicine.model';
 import { ProductListComponent } from '../product-list/product-list.component';
 
 @Component({
